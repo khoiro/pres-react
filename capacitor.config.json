@@ -1,0 +1,18 @@
+{
+  "appId": "com.example.app",
+  "appName": "presensi-react",
+  "webDir": "dist",
+  "server": {
+    "androidScheme": "https",
+    "allowNavigation": ["apipresensi.sidoarjokab.go.id", "*.sidoarjokab.go.id"]
+  },
+  "android": {
+    "allowMixedContent": true,
+    "webContentsDebuggingEnabled": true
+  },
+  "plugins": {
+    "Permissions": {
+      "permissions": ["camera", "location", "storage"]
+    }
+  }
+}

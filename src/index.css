@@ -1,0 +1,153 @@
+body {
+  margin: 0;
+  background: #edf2f7;
+  font-family:
+    Segoe UI,
+    Tahoma,
+    Geneva,
+    Verdana,
+    sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+.sidebar {
+  width: 260px;
+  min-height: 100vh;
+
+  background: #0d6efd;
+
+  transition: 0.3s;
+}
+
+.sidebar .logo {
+  height: 70px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  color: white;
+
+  font-size: 22px;
+
+  font-weight: bold;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.sidebar-menu {
+  padding: 15px;
+}
+
+.sidebar-menu a {
+  display: flex;
+
+  align-items: center;
+
+  color: white;
+
+  padding: 12px 18px;
+
+  border-radius: 10px;
+
+  margin-bottom: 8px;
+
+  transition: 0.2s;
+}
+
+.sidebar-menu a:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.sidebar-menu .active {
+  background: white;
+
+  color: #0d6efd !important;
+
+  font-weight: bold;
+}
+
+.top-navbar {
+  height: 70px;
+
+  background: white;
+
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+
+  position: sticky;
+
+  top: 0;
+
+  z-index: 1030;
+}
+
+.btn-toggle-sidebar {
+  border: none;
+
+  background: transparent;
+
+  font-size: 24px;
+
+  color: #0d6efd;
+
+  line-height: 1;
+
+  padding: 4px 8px;
+}
+
+.btn-toggle-sidebar:hover {
+  color: #084298;
+}
+
+.sidebar-overlay {
+  position: fixed;
+
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.5);
+
+  z-index: 1040;
+}
+
+/* Sidebar tersembunyi (off-canvas) di layar kecil, muncul lewat tombol hamburger */
+@media (max-width: 991.98px) {
+  .sidebar {
+    position: fixed;
+
+    top: 0;
+
+    left: 0;
+
+    z-index: 1050;
+
+    transform: translateX(-100%);
+  }
+
+  .sidebar.sidebar-open {
+    transform: translateX(0);
+  }
+}
+
+/* Di layar besar sidebar selalu tampil, overlay tidak diperlukan */
+@media (min-width: 992px) {
+  .sidebar-overlay {
+    display: none;
+  }
+}
+
+.page-content {
+  padding: 25px;
+}
+
+.card-custom {
+  border: none;
+
+  border-radius: 15px;
+
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
